@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="loader">
+        <img src="pikaball.gif" alt="loading...">
+    </div>
+
+    <div class="layoutAdmin">
+        <div class="navbar">
+            <div>
+                <img src="pokeball_PNG26.png" alt="ceva rotund">
+                <h1> Pokeshop</h1>
+            </div>
+            <button>
+                <img src="cart.svg" width="20px" height="20px" alt="">
+                Cumparaturi</button>
+            <button onclick="location.href='index.html'" type="button">
+                <img src="shop.png" width="20px" height="20px" alt="">
+                shop</button>
+        </div>
+
+        <div class="manage">
+
+            <form id="myForm" class="hidden" onsubmit="add(event,this)">
+                <input type="text" name="numePokemon" placeholder="nume ">
+                <input type="text" name="srcPokemon" placeholder="sursa foto ">
+                <input type="number" name="cost" placeholder="cost ">
+                <textarea name="description" id="desc" cols="30" rows="10"
+                    placeholder="Descrierea pokemonului"></textarea> <br>
+                <button type="submit" name="submit">Submit</button>
+                <button type="reset" onclick="hideForm()">Cancel</button>
+
+            </form>
+
+            <button class="adaugaBtn" onclick="showForm()">+</button>
+
+            <div id="output">
+                <table id="tabel">
+                    <thead>
+                        <th>Nume</th>
+                        <th>Imagine</th>
+                        <th>Pret</th>
+                        <th></th>
+
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class='footer'>footer </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
