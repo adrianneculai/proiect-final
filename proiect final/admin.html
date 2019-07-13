@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload='getObj("table")'>
     <div class="loader">
         <img src="pikaball.gif" alt="loading...">
     </div>
@@ -21,9 +21,9 @@
                 <img src="pokeball_PNG26.png" alt="ceva rotund">
                 <h1> Pokeshop</h1>
             </div>
-            <button>
+            <button  onclick="location.href='cos.html'" type="button">
                 <img src="cart.svg" width="20px" height="20px" alt="">
-                Cumparaturi</button>
+                Cumparaturi <span id="cos"></span></button>
             <button onclick="location.href='index.html'" type="button">
                 <img src="shop.png" width="20px" height="20px" alt="">
                 shop</button>

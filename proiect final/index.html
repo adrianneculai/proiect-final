@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="getObj('main')">
 
     <div class="loader">
 
@@ -44,9 +44,7 @@
 
                 setInterval(() => {
                     mySiema.next()
-
                 }, 6000)
-
             </script>
         </div>
         <div class="navbar">
@@ -54,20 +52,17 @@
                 <img src="pokeball_PNG26.png" alt="">
                 <h1> Pokeshop</h1>
             </div>
-            <button>
+            <button  onclick="location.href='cos.html'" type="button">
                 <img src="cart.svg" width="20px" height="20px" alt="">
-                Cumparaturi</button>
+                Cumparaturi <span id="cos"></span> </button>
             <button onclick="location.href='admin.html'" type="button">
                 <img src="lock.png" width="20px" height="20px" alt="">
                 Admin</button>
         </div>
         <div class='content'>
         </div>
-
         <div class='footer'>footer </div>
     </div>
-
-
     <script src="script.js"></script>
 </body>
 

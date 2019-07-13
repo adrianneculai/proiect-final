@@ -20,7 +20,11 @@
     justify-content: center;
     align-items: center;
 }
+#cos.ascunde{
 
+display: none;
+
+}
 .siema {
     height: 30vh;
     background-color: aquamarine;
@@ -60,8 +64,12 @@ body {
     height: 100vh;
     display: grid;
     grid-template-rows: 60px 30vh 1fr auto;
-    grid-template-columns: 1fr 250px 250px 250px 250px 1fr;
-    grid-template-areas: ". b b b b ." ". a a a a ." ". c c c c ." ". d d d d .";
+    grid-template-columns: 1fr 250px 250px 250px 250px 250px 1fr;
+    grid-template-areas: 
+    ". b b b b b ." 
+    ". a a a a a ."
+     ". c c c c c ." 
+     ". d d d d d .";
 }
 
 .navbar>button {
@@ -70,8 +78,8 @@ body {
     padding: 0px 20px;
     height: 80%;
     font-size: 120%;
-    border-radius: 10px;
-    width: 260px;
+    border-radius: 10px;    
+    width: 320px;
     margin-left: 10px;
 }
 
@@ -120,7 +128,7 @@ body {
     padding-bottom: 20px;
     grid-area: c;
     display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
     grid-gap: 20px;
     padding: 20px;
 }
@@ -277,11 +285,11 @@ textarea {
     height: 100vh;
     display: inline-grid;
     grid-template-rows: 60px 1fr auto;
-    grid-template-columns: 1fr 250px 250px 250px 250px 1fr;
+    grid-template-columns: 1fr 250px 250px 250px 250px 250px 1fr;
     grid-template-areas: 
-    ". b b b b ." 
-    ". e e e e ." 
-    ". d d d d .";
+    ". b b b b b ." 
+    ". e e e e e ." 
+    ". d d d d d .";
 }
 
 .adaugaBtn {
@@ -289,6 +297,45 @@ textarea {
     font-size: 30px;
     margin-top: 20px;
     padding: 10px;
+}
+
+
+@media only screen and (max-width: 1300px) {
+    .layout {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 60px 30vh 1fr auto;
+        grid-template-columns: 1fr 250px 250px 250px 250px 1fr;
+        grid-template-areas: 
+        ". b b b b ." 
+        ". a a a a ." 
+        ". c c c c ." 
+        ". d d d d .";
+    }
+    .content {
+        background-color: rgb(199, 199, 199);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        grid-area: c;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+        grid-gap: 20px;
+        padding: 20px;
+    }
+
+    .layoutAdmin {
+        width: 100vw;
+        height: 100vh;
+        display: inline-grid;
+        grid-template-rows: 60px 1fr auto;
+        grid-template-columns: 1fr 250px 250px 250px 250px 1fr;
+        grid-template-areas: 
+        ". b b b b ." 
+        ". e e e e ." 
+        ". d d d d .";
+    }
+
 }
 
 @media only screen and (max-width: 1000px) {
@@ -336,7 +383,11 @@ textarea {
         display: grid;
         grid-template-rows: 60px 30vh 1fr auto;
         grid-template-columns: 1fr 250px 250px 1fr;
-        grid-template-areas: ". b b ." ". a a ." ". c c ." ". d d .";
+        grid-template-areas: 
+        ". b b ."
+        ". a a ." 
+        ". c c ." 
+        ". d d .";
     }
     .content {
         background-color: rgb(199, 199, 199);
@@ -370,7 +421,11 @@ textarea {
         display: grid;
         grid-template-rows: 60px 30vh 1fr auto;
         grid-template-columns: 1fr 250px 1fr;
-        grid-template-areas: ". b ." ". a ." ". c ." ". d .";
+        grid-template-areas:
+        ". b ." 
+        ". a ." 
+        ". c ." 
+        ". d .";
     }
     .content {
         background-color: rgb(199, 199, 199);
