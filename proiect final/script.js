@@ -72,7 +72,7 @@ function drawTable() {
         createRows +=
             `<tr>
                 <td  class="tableimg"> <img src= "${pokemon[i].scr}"> </td>
-                <td class="tableName">${pokemon[i].name}</td>
+                <td class="tableName" onclick="detaliiProba('${i}')">${pokemon[i].name}</td>
                 <td class="tableTip"> <div class="container ${pokemon[i].tip}"></div></td>
                 <td class="tableTipTxt"> <div> ${pokemon[i].tip} </div></td>
                 <td class="tablePrice">${pokemon[i].price}</td>
@@ -254,10 +254,13 @@ function drawCos() {
                 </td>
             </tr>`
     }
-    createRows += ` <tr style="background-color:grey">
+    createRows += ` <tr style="background-color:red; color:white; align:center">
+    <td class="tableData"></td>
+    <td class="tableData"></td>
     <td class="tableData">Total cos</td>
     <td class="tableData">${totalCos} $</td>
-    <td class="tableData"> <button onclick="cumparaProduse()">Cumpara</button>
+    <td class="tableData">
+    <div  class="cumparaButton" onclick="cumparaProduse()">  </div>
     </td>
 </tr>`
     document.querySelector("#tabelCos tbody").innerHTML = createRows
@@ -289,12 +292,14 @@ function delCartProd(idx) {
 
 function addCart(idx) {
     console.log("merge")
+
     let pokeCart = JSON.parse(localStorage.getItem("pokemon"))
     if (pokeCart[idx].cantitate >= 1) {
-        if ( pokemon[pokeCart[idx].index].cantitate > pokeCart[idx].cantitate){
+        if (pokemon[pokeCart[idx].index].cantitate > pokeCart[idx].cantitate) {
             pokeCart[idx].cantitate = pokeCart[idx].cantitate * 1 + 1
-        }else{
-            alert(`Ai depasit stocul disponibil (${pokemon[pokeCart[idx].index].cantitate})`)
+        } else {
+            // alert(`Ai depasit stocul disponibil (${pokemon[pokeCart[idx].index].cantitate})`)
+            alertulMeu(idx, pokeCart)
         }
 
     } else {
@@ -304,6 +309,21 @@ function addCart(idx) {
     drawCos()
     produseInCos()
 }
+
+function alertulMeu(idx, pokeCart) {
+
+    var div = document.createElement("div");
+    div.className = "fullscreen";
+    div.innerHTML = `
+    <div class="bgWhite">Ai depasit stocul disponibil (${pokemon[pokeCart[idx].index].cantitate})
+    <button id="okBtn">Ok</button>
+    </div>`;
+    div.querySelector("#okBtn").addEventListener("click", function () {
+        div.parentElement.removeChild(div)
+    });
+    document.body.appendChild(div);
+}
+
 
 
 function drawDetalii() {
@@ -369,8 +389,22 @@ async function cumparaProduse() {
             stocInsuficient.push(`${pokemon[pokeCart[i].index].name} (${pokemon[pokeCart[i].index].cantitate})`)
         }
     }
-
     if (stocInsuficient.length != 0) {
         alert("Stoc insuficient de: \r" + stocInsuficient.join("\r"))
+    } else {
+        // drawCos()
+        drawCeAiCumparat()
+        localStorage.removeItem("pokemon")
     }
+}
+
+function drawCeAiCumparat() {
+    let pokeCart = JSON.parse(localStorage.getItem("pokemon"))
+    let ceAiCumparat = ''
+    for (var i in pokeCart) {
+        ceAiCumparat += `<div class="stanga">
+    <img id="poza" src="${pokemon[pokeCart[i].index].scr}" alt="">
+`}
+    document.querySelector(".manage").innerHTML = ceAiCumparat
+    document.querySelector(".loader").classList.add("hidden")
 }

@@ -10,6 +10,7 @@
 
 a {
     text-decoration: none;
+    cursor: pointer;
     }
 
 a:link {
@@ -213,6 +214,11 @@ body {
     display: none;
 }
 
+.tableName{
+
+    cursor: pointer;
+}
+
 .manage {
     background-color: rgb(0, 0, 0);
     grid-area: e;
@@ -231,6 +237,26 @@ th {
     color: wheat;
     font-size: 20px;
 }
+
+.fullscreen{
+position: fixed;
+top: 0;
+right: 0;
+left: 0;
+bottom:0;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.bgWhite{
+
+background-color: white;
+padding: 60px;
+
+
+}
+
 
 /* --------------------sageti la tabel cos----------------------- */
 
@@ -254,6 +280,7 @@ th {
     height: 40px;
     background: url(sageti.png) 100px 95px;
      background-size: 50px 50px;
+     cursor: pointer;
 }
 
 .sageataDreapta {
@@ -261,6 +288,7 @@ th {
     height: 40px;
     background: url(sageti.png) 123px 95px;
      background-size: 50px 50px;
+     cursor: pointer;
 
 }
 
@@ -270,6 +298,8 @@ th {
     height: 40px;
     background: url(sagetiRosu.png) 100px 95px;
      background-size: 50px 50px;
+     cursor: pointer;
+
 }
 
 
@@ -277,7 +307,9 @@ th {
     width: 23px;
     height: 40px;
     background: url(sagetVerdei.png) 123px 95px;
-     background-size: 50px 50px;}
+     background-size: 50px 50px;
+     cursor: pointer;
+    }
 
 
 
@@ -338,12 +370,13 @@ th {
     width: 45%;
     padding: 10px;
     font-weight: 550;
+    
 }
 
 .stanga>#poza {
 justify-self: center;
-width:400px;
-height:400px;
+width:300px;
+height:300px;
 }
 
 #nrBuc{
@@ -420,12 +453,40 @@ td {
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url(edit.png);
+    cursor: pointer;
 }
+
+.cumparaButton {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(cumpara.png);
+    cursor: pointer;
+
+}
+
+.cumparaButton:hover {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(cumparaHover.png);
+    cursor: pointer;
+
+}
+
 
 .editButton:hover {
     width: 40px;
     height: 40px;
     background-image: url(editHover.png);
+    cursor: pointer;
+
 }
 
 .deleteButton {
@@ -436,12 +497,14 @@ td {
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url(delete.png);
+    cursor: pointer;
 }
 
 .deleteButton:hover {
     width: 40px;
     height: 40px;
     background-image: url(deleteHover.png);
+    cursor: pointer;
 }
 
 .tableimg>img {
@@ -493,13 +556,14 @@ textarea {
     font-size: 30px;
     margin-top: 20px;
     padding: 10px;
+    cursor: pointer;
 }
 
 .tableTip {
     display: flex;
     align-items: center;
     flex-direction: row;
-    justify-content: right;
+    justify-content: flex-end;
     height: 80px;
 }
 
